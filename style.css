@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+DK+Loopet:wght@100..400&family=Poppins:wght@400;500;700;800&display=swap');
+ /* font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;*/
+  *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+  }
+body { 
+    font-family: "Poppins", sans-serif;
+    background-color: #516adb;
+    width: 100%;
+    overflow-x: hidden;    
+} 
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+  
+/* Capa difuminada */
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: cover;
+    background-image: url(imagenes/f9.jpeg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Intensidad del desenfoque */
+    z-index: -1; /* Para que el contenido quede encima */
+}
+/* Asegúrate de que el contenido esté por encima */
+.header h2 {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}    
+.logo img {
+    width: 100px; /* Ajusta el tamaño según tu imagen */
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Evita distorsión */
+}
+/* Opcional: Si quieres un hover effect */
+.logo img:hover {
+    opacity: 0.8;
+}
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+.menu .navbar ul li a {
+    font-size: 20px;
+    padding: 22px;
+    color: #dd1a1a;
+    display: block;
+}
+.menu .navbar ul li a:hover {    
+    color: #290dca;
+}
+#menu {
+    display: none;
+}
+.menu-icono {
+    width: 25px;
+}
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+.header-txt{
+    text-align: center;
+    margin-bottom: 45px;
+}
+.header-txt h1, span, h3 {
+    font-size: 110px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family:'Bebas Neue', cursive;
+    color: #e70e0e;
+    margin-bottom: 15px;
+}
+.header-txt span {
+    font-size: 25px;
+}
+.header-txt p {
+    color: #ffffff;
+    padding: 0 250px;
+    margin: 25px 0;
+}
+.btn-1 {
+    display: inline-block;
+    padding: 11px 25px ;
+    background-color: #6d0e13;
+    color: #db0808;
+    text-transform: uppercase;
+    letter-spacing: 2px ;
+    font-size: 20px;
+    font-family:'Bebas Neue', cursive;
+    margin: 25px 0;
+    border: 0;
+}
+.btn-1:hover {
+    background-color: #cf111a;
+} 
+.header-dir {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 20px;
+}
+.dir h3 {
+    font-size: 18px;
+}
+.dir p {
+    font-size: 22px;
+    color: #080bdb;
+    text-transform: uppercase;
+}
+.welcome {
+    display: flex;
+}
+.welcome-1 {
+    background-image: url(imagenes/f0.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+.welcome-2 {
+    width: 50%;
+    padding: 150px 250px 150px 100px;
+    background-color: #3A3939;
+}
+h2 {
+    font-size: 90px;
+    line-height: 100px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family:'Bebas Neue', cursive;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 20px;
+    color: #AFAFAF;
+    margin: 25px 0px;
+}
+.b1 {
+    color: #CF2D3A;
+}
+.service {
+    padding: 100px 0;
+    text-align: center;
+}
+.service-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+hr {
+    border: 1px solid #CF2D3A;
+    width: 80px;
+}
+.service-txt p {
+    padding: 50px 150px;
+}
+.service-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 0;
+}
+.service-1 {
+    background-color: #3a3939;
+    padding: 35px 25px;
+    margin: 0 10px;
+    border-radius: 15px;
+}
+.service-1 img {
+    margin-bottom: 15px;
+    width: auto;
+    height: 300px;
+    object-fit: contain; /* Recorta la imagen sin distorsión */
+    border-radius: 50%; /* Ejemplo: forma circular */
+    transition: 0.3s; /* Animación suave al pasar el mouse */
+    border: 3px solid #383636; /* Borde rojo */
+    box-shadow: 0 4px 8px rgba(153, 116, 116, 0.2); /* Sombra */
+}
+.service-1 h3 {
+    font-size: 25px;
+    color: #FFFFFF;
+}
+.service-1 a {
+    color: #CF2D3A;
+    font-size: 16px;
+}
+.service-2 {
+    background-color: #3a3939;
+    padding: 35px 25px;
+    margin: 0 10px;
+    border-radius: 15px;
+}
+.service-2 img {
+    margin-bottom: 15px;
+    width: auto;
+    height: 300px;
+    object-fit: contain; /* Recorta la imagen sin distorsión */
+    border-radius: 50%; /* Ejemplo: forma circular */
+    transition: 0.3s; /* Animación suave al pasar el mouse */
+    border: 3px solid #383636; /* Borde rojo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra */
+}
+.service-2 h3 {
+    font-size: 25px;
+    color: #FFFFFF;
+}
+.service-2 a {
+    color: #CF2D3A;
+    font-size: 16px;
+}
+@media(max-width:991px){
+    .menu{
+        padding: 20px;
+    }
+    .menu label{
+        display: initial;
+    }
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1F1F1F;
+        display: none;
+    }    
+    .header-txt h1 {
+        font-size: 10vw;
+    }
+    .welcome {
+        flex-direction: column;
+    }
+    .welcome-1{
+        display: none;
+    }
+    .welcome-2{
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    .welcome-2 {
+        padding: 30px;
+    }
+    .services-group {
+        flex-direction: column;
+    }
+    .services-1 {
+        flex: 1 1 100%;
+    }       
+    .menu.navbar ul li{
+        width: 100%;
+    }
+    #menu:checked~.navbar{
+        display: initial;
+    }
+    .dir p{
+        font-size: 18px;
+    }
+    .welcome{
+        flex-direction: column;
+    }
+    .welcome-1{
+        display: none;
+    }
+    .welcome-2{
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    h2{
+        font-size: 70px;
+        line-height: 80px;
+    }
+    p{
+        margin: 15px 0;
+    }
+    .services{
+        padding: 30px;
+    }
+    .services-txt p{
+        padding: 0;
+    }
+    .services-group{
+        flex-direction: column;
+        margin: 0;
+    }
+    .services-1{
+        margin: 0 0 20px 0;
+    }
+    .footer {
+        background-color: #111;
+        color: #141313;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .footer p{
+        color: #0e0d0d;
+    }
+
+    .footer a {
+        color: #700a0a;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .footer a:hover {
+        color: #830d0d;
+    }  
+    .menu.navbar ul li{
+        width: 100%;
+    }
+    #menu:checked~.navbar{
+        display: initial;
+    }
+    .header{
+        min-height: 0vh;
+    }
+    .header-content{
+        padding: 80px 30px 50px 30px;
+    }
+    .header-txt{
+        margin-bottom: 15px;
+    }
+    .header-txt h1{
+        font-size: 90px;
+    }
+    .header-txt p{
+        padding: 0;
+        margin: 15px 0;
+    }
+    .header-dir{
+        flex-direction: column  ;
+    }
+    .dir p{
+        font-size: 18px;
+    }
+    .welcome{
+        flex-direction: column;
+    }
+    .welcome-1{
+        display: none;
+    }
+    .welcome-2{
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    h2{
+        font-size: 70px;
+        line-height: 80px;
+    }
+    p{
+        margin: 15px 0;
+    }
+    .services{
+        padding: 30px;
+    }
+    .services-txt p{
+        padding: 0;
+    }
+    .services-group{
+        flex-direction: column;
+        margin: 0;
+    }
+    .services-1{
+        margin: 0 0 20px 0;
+    }
+
+}
