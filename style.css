@@ -83,7 +83,7 @@ body {
     display: block;
 }
 .menu .navbar ul li a:hover {    
-    color: #210a96;
+    color: #351d9d;
 }
 #menu {
     display: none;
@@ -111,9 +111,9 @@ body {
     font-size: 25px;
 }
 .header-txt p {
-    color: #2f60ca;
-    padding: 10 500px;
-    margin: 25px 0;
+    color: #210b7b;
+    padding: 0 250px;
+    margin: 40px 10;
 }
 .btn-1 {
     display: inline-block;
