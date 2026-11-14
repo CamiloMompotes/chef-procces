@@ -72,28 +72,59 @@ body {
 .logo img:hover {
     opacity: 0.8;
 }
-.menu .navbar ul li {
-    position: relative;
-    float: left;
-}
-.menu .navbar ul li a {
-    font-size: 30px;
-    padding: 30px;
-    color: #181818;
-    display: block;
-}
-.menu .navbar ul li a:hover {    
-    color: #351d9d;
-}
-#menu {
+#menu{
     display: none;
-}
-.menu-icono {
-    width: 25px;
 }
 .menu label {
+    display: block;
+    font-size: 36px;
+    line-height: 1;
+    color: #1c1a2b;
     cursor: pointer;
+    user-select: none;
+}
+.menu label {
+    display: block;
+    font-size: 36px;
+    line-height: 1;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.menu .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 220px;
+    background-color: transparent;
     display: none;
+}
+
+#menu:checked ~ .navbar {
+    display: none;
+}
+
+.menu .navbar ul li {
+    float: none;
+    width: 100%;
+}
+.menu .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    display: none;
+}
+#menu:checked ~ .navbar {
+    display: block;
+}
+.menu .navbar ul li {
+    float: none;
+    width: 100%;
+}
+.menu .navbar ul li a {
+    padding: 18px 22px;
 }
 .header-txt{
     text-align: center;
