@@ -79,7 +79,7 @@
                 <ul>
                     <!-- ERROR: href="#" no lleva a ninguna parte.
                          Deberian ser href="#inicio" y href="#recetas" (con sus ids en el destino) -->
-                    <li><a href="#inicio">INICIO</a></li>
+                    <li><a href="#inicio">INICIO</a></li>/ arreglar pulsacion de inicio
                     <li><a href="#recetas">RECETAS</a></li> /  FALTA REFERENCIADO DE RECETAS
                     <li><a href="#contacto">CONTACTO</a></li>/ FALTA OTRA PESTAÑA DE REFERENCIA
                 </ul>
@@ -101,24 +101,27 @@
                 </p>
             </div>
 
-            <!-- Bloque de datos de contacto, en fila (flex) -->
+            <!-- Bloque referencias, en fila (flex) -->
             <div class="header-dir">
                 <div class="dir">
-                    <!-- ERROR: titulo vacio, no se muestra nada -->
-                    <h3></h3>
                     <ul>
-                        <!-- ERROR GRAVE: la comilla de href=" nunca se cierra.
-                             El navegador interpreta como valor todo el texto hasta la siguiente
-                             comilla, lo que desordena el HTML que sigue (puede romper el bloque
-                             del telefono). Debe ser: <li><a href="#">Texto</a></li>
-                             o borrar todo este bloque si no se necesita -->
-                        <li><a href=" > </a></li>
+                        <li><a href="#recetas"><h3>RECETAS</h3></a></li>
                     </ul>
                 </div>
                 <div class="dir">
-                    <h3>TELEFONO</h3>
-                    <!-- Telefono visible publicamente si subes la pagina a internet -->
-                    <p>3144500131</p>
+                    <ul>
+                        <li><a href="#para hoy"><h3>PARA HOY</h3></a></li>
+                    </ul>
+                </div>
+                <div class="dir">
+                    <ul>
+                        <li><a href="#descripcion"><h3>DESCRIPCION</h3></a></li>
+                    </ul>
+                </div>
+                <div class="dir">
+                    <ul>
+                        <li><a href="#contacto"><h3>CONTACTO</h3></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -128,17 +131,18 @@
          SECCION DE BIENVENIDA: dos columnas al 50 % cada una.
          En celular la primera se oculta y quedan apiladas (ver @media del CSS)
          ======================================================== -->
-    <section class="welcome">
+    <section class="descripcion" id="descripcion">
         <!-- Columna izquierda vacia: el CSS le pone una imagen de fondo (f0.png) -->
-        <div class="welcome-1"></div>
+        <div class="descripcion-1"></div>
         <!-- Columna derecha: fondo gris oscuro con texto -->
-        <div class="welcome-2">
-            <!-- ERROR: h1 vacio. Un titulo vacio no debe existir y ademas es otro h1 -->
-            <h1></h1>
+        <div class="descripcion-2"> / modificar css
+            <h1>UN NUEVO HOBBY</h1>
             <!-- Clase b1: da color rojo al texto desde el CSS.
                  Faltan tildes: "atencion", "estetica" -->
             <p class="b1">
-                Trabajo de calidad con la mejor atencion y estetica, manejamos toda clase de servicios.
+                Bienvenido a mi pagina de recetas, un espacio donde la creatividad y el sabor se encuentran. 
+                Aqui comparto mis mejores recetas, desde platos tradicionales hasta innovadoras creaciones culinarias. 
+                Cada receta ha sido cuidadosamente seleccionada para ofrecerte una experiencia gastronomica unica.
             </p>
         </div>
     </section>
@@ -148,129 +152,48 @@
          Solo debe haber un <main> por pagina.
          PENDIENTE: agregar id="recetas" (o "servicios") para el enlace del menu
          ======================================================== -->
-    <main class="service container">
+    <main class="recomendaciones container" id="para hoy">
 
         <!-- Titulo de la seccion, centrado -->
-        <div class="service-txt">
-            <h2>Nuestros servicios</h2>
-            <!-- Linea separadora (decorada por el CSS: roja y de 80px) -->
+        <div class="recomendaciones-txt">
+            <h2>Recomendaciones</h2>
             <hr>
-            <!-- Parrafo vacio, no muestra nada -->
-            <p></p>
+            <p>¿Qué cocinamos hoy? Recetas del día, hechas con amor</p>
         </div>
 
         <!-- Contenedor de las dos tarjetas, una al lado de la otra (flex) -->
-        <div class="service-group">
+        <div class="recomendaciones-group">
 
             <!-- TARJETA 1: cortes de cabello -->
-            <div class="service-1">
+            <div class="desayunos-1">
                 <!-- ERROR de accesibilidad: alt vacio. Un alt vacio hace que los lectores
                      de pantalla ignoren la imagen. Debe describirla -->
-                <img src="imagenes/cabello.png" alt="">
-                <h3>¡Cortes que se adaptan a TI!</h3>
-                <p>
-                    Desde tendencias actuales hasta clásicos reinventados: diseñamos tu look ideal para resaltar tu estilo
-                </p>
-                <!-- ERROR: este h1 es un subtitulo, deberia ser h3 o h4.
-                     Ademas rompe la jerarquia de titulos (h1 despues de h3) -->
-                <h1>
-                Servicio premium para todas las edades y gustos:
-                </h1>
-                <!-- ERROR de uso: una tabla sirve para datos en filas y columnas.
-                     Esto es una lista, deberia ser <ul><li>...</li></ul>.
-                     Ademas <th> significa celda de encabezado, no de contenido -->
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>✔️ Técnicas modernas + inspiración retro.</th>
-                        </tr>    
-                        <tr>
-                            <th>✔️ Asesoría personalizada según tu rostro y personalidad.</th>
-                        </tr>
-                        <tr>
-                            <th>✔️ Calidad garantizada y resultados que impresionan.</th>
-                        </tr>
-                    </tbody>
-                </table> 
-                <!-- Mezcla "TI" (tu) con "vos": conviene usar un solo trato -->
-                <p>            
-                    ¡Transforma tu imagen con un corte que habla de vos! 
-                </p>
+                <img src="imagenes/desayuno.png" alt="Desayuno saludable">
+                <h2>una nueva forma de iniciar el dia</h2>
+                
             </div>
 
-            <!-- TARJETA 2: barba y cejas (misma estructura que la tarjeta 1) -->
-            <div class="service-2">
-                <!-- ERROR: alt vacio, igual que en la tarjeta 1 -->
-                <img src="imagenes/barba.png" alt="">
-                <h3>¡Barba y cejas que definen tu estilo!</h3>
-                <p>Desde diseños precisos hasta modelados con carácter: creamos looks que potencian tu imagen masculina.</p>
-                <!-- ERROR: h1 usado como subtitulo -->
-                <h1>Servicio experto con toque premium:</h1>
-                <!-- ERROR: tabla usada como lista -->
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>✔️ Técnicas con navaja tradicional + productos orgánicos.</th>
-                        </tr>
-                        <tr>
-                            <th>✔️ Asesoría según forma facial y crecimiento.</th>
-                        </tr>
-                        <tr>
-                            <th>✔️ Resultados impecables al instante.</th>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>¡Renueva tu estilo facial con un acabado profesional! </p>
-            <!-- ERROR: dos enlaces sin texto, no se ven ni sirven. Borrarlos o completarlos -->
-            <a href="#"></a>
-            <a href="#"></a>
             </div>
         </div>
     </main>
-</body>
-<!-- ERROR DE ESTRUCTURA: el </body> ya se cerro arriba, pero el footer esta DESPUES.
-     El footer debe ir antes de </body>. El navegador lo corrige solo,
-     pero el HTML es invalido -->
-
-<!-- ============================================================
-     FOOTER: pie de pagina
-     NOTA: el CSS actual solo estiliza .footer dentro del @media de celular;
-     en computador queda sin estilo
-     ============================================================ -->
 <footer class="footer">
     <div class="container">
         <!-- &copy; es el codigo del simbolo de copyright.
              El año dice 2025 y el nombre es de barberia, no de recetas -->
-        <p>&copy; 2025 Barbería El Mono. Todos los derechos reservados.</p>
+        <p>&copy; 2026 innovacion en recetas</p>
         <p>Síguenos en: 
-            <!-- ERROR: href="#" no lleva a ningun lado y href="" recarga la pagina.
-                 Poner la direccion real de cada red social -->
-            <a href="#">Instagram</a> | 
-            <a href="#">Facebook</a> | 
-            <a href="">WhatsApp</a>
+            <a href="https://www.instagram.com/poloca71/" target="_blank" rel="noopener">Instagram</a> | 
+            <a href="https://www.facebook.com/profile.php?id=100077200314936&locale=es_LA" target="_blank" rel="noopener">Facebook</a> | 
         </p>
-        <!-- Credito del autor con enlace a su GitHub.
-             ERROR: repite Instagram, Facebook y WhatsApp que ya estan arriba -->
+        <p>contactanos en:
+            <a href="https://wa.me/573144500131?text=Hola%2C%20quiero%20mas%20informacion%20sobre%20las%20recetas" target="_blank" rel="noopener"> WhatsApp</a> |
+           <a href="https://mail.google.com/mail/?view=cm&to=camil.mompotes@utp.edu.co&su=Consulta%20desde%20la%20pagina&body=Hola%2C%20quiero%20mas%20informacion." target="_blank" rel="noopener"> Correo</a> |
+        </p>
         <p>
             <a href="https://github.com/CamiloMompotes/CamiloMompotes">pagina creada por camilo mompotes</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a> 
-            <a href="">WhatsApp</a>
         </p>
     </div>
 </footer>
 
 <!-- Cierre de la etiqueta raiz -->
 </html>
-
-<!-- ============================================================
-     RESUMEN DE PROBLEMAS (de mas grave a menos)
-     1. Comilla sin cerrar en <a href=" > </a>   (rompe la estructura)
-     2. <footer> fuera de <body>
-     3. Varios <h1> (uno vacio y dos usados como subtitulo)
-     4. Tablas usadas como listas
-     5. alt vacio en las imagenes
-     6. Enlaces con href="#", href="" o sin texto
-     7. Titulo con error ortografico y descripcion que no coincide con el contenido
-     8. Elementos vacios: <h3></h3>, <p></p>, <h1></h1>
-     ============================================================ -->
