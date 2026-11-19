@@ -1,33 +1,9 @@
-<!-- ============================================================
-     DECLARACION DE TIPO DE DOCUMENTO
-     Le dice al navegador que el archivo es HTML5 (modo estandar).
-     Debe ser siempre la primera linea del archivo.
-     ============================================================ -->
 <!DOCTYPE html>
-
-<!-- Etiqueta raiz: contiene todo el documento.
-     lang="es" declara el idioma (ayuda a lectores de pantalla y traductores). -->
 <html lang="es">
-
-<!-- ============================================================
-     HEAD: informacion para el navegador (NO se muestra en pantalla,
-     salvo el titulo que aparece en la pestaña)
-     ============================================================ -->
 <head>
-    <!-- Codificacion de caracteres: permite tildes y la letra n con tilde -->
     <meta charset="UTF-8">
-
-    <!-- Adapta la pagina al ancho real del celular.
-         Sin esta linea los @media del CSS no funcionan bien en moviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Texto de la pestana del navegador y titulo en Google.
-         ERROR: "PROCCES" esta mal escrito, debe ser "PROCESS" -->
     <title>CHEF PROCESS</title>
-
-    <!-- Conecta la hoja de estilos (colores, tamanos, posiciones).
-         El nombre debe coincidir exactamente con el archivo real (style.css).
-        -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Resumen que Google puede mostrar bajo el titulo.-->
@@ -79,8 +55,8 @@
                 <ul>
                     <!-- ERROR: href="#" no lleva a ninguna parte.
                          Deberian ser href="#inicio" y href="#recetas" (con sus ids en el destino) -->
-                    <li><a href="recetas/index.html">RECETAS</a></li> /  FALTA REFERENCIADO DE RECETAS
-                    <li><a href="#contacto">CONTACTO</a></li>/ FALTA OTRA PESTAÑA DE REFERENCIA
+                    <li><a href="recetas/index.html">RECETAS</a></li>  
+                    <li><a href="#contacto">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
@@ -145,36 +121,22 @@
             </p>
         </div>
     </section>
-
-    <!-- ========================================================
-         CONTENIDO PRINCIPAL: seccion de servicios.
-         Solo debe haber un <main> por pagina.
-         PENDIENTE: agregar id="recetas" (o "servicios") para el enlace del menu
-         ======================================================== -->
-    <main class="recomendaciones container" id="para hoy">
-
-        <!-- Titulo de la seccion, centrado -->
-        <div class="recomendaciones-txt">
-            <h2>Recomendaciones</h2>
-            <hr>
-            <p>¿Qué cocinamos hoy? Recetas del día, hechas con amor</p>
+<main>
+<section class="receta-dia" id="receta-del-dia">
+    <h2 class="rdd-titulo">Receta del día</h2>
+    <a class="rdd-tarjeta" id="rdd-enlace" href="recetas/index.html">
+        <img id="rdd-imagen" src="" alt="">
+        <div class="rdd-texto">
+            <h4 id="rdd-nombre">Cargando receta…</h4>
+            <p id="rdd-descripcion"></p>
+            <span class="rdd-boton">Ver receta</span>
         </div>
-
-        <!-- Contenedor de las dos tarjetas, una al lado de la otra (flex) -->
-        <div class="recomendaciones-group">
-
-            <!-- TARJETA 1: cortes de cabello -->
-            <div class="desayunos-1">
-                <!-- ERROR de accesibilidad: alt vacio. Un alt vacio hace que los lectores
-                     de pantalla ignoren la imagen. Debe describirla -->
-                <img src="imagenes/desayuno.png" alt="Desayuno saludable">
-                <h2>una nueva forma de iniciar el dia</h2>
-                
-            </div>
-
-            </div>
-        </div>
-    </main>
+    </a>
+</section>
+<section class="refenciacion-a-recetas">
+    <a class="rdd-tarjeta" href="recetas/index.html"> <h4>Ver más recetas</h4></a>
+</section>
+</main>
 <footer class="footer">
     <div class="container" id="contacto">
         <!-- &copy; es el codigo del simbolo de copyright.
@@ -193,6 +155,47 @@
         </p>
     </div>
 </footer>
+</body>
+<script>
+    // Lista de recetas. Al crear una receta nueva, agrégala aquí.
+    const recetas = [
+        {
+            nombre: "Huevos",
+            descripcion: "Un desayuno rápido para empezar el día con energía.",
+            pagina: "recetas/huevos.html",
+            imagen: "imagenes/huevos.png"
+        },
+        {
+            nombre: "Arroz",
+            descripcion: "Un almuerzo fácil para disfrutar durante el día.",
+            pagina: "recetas/arroz.html",
+            imagen: "imagenes/arroz.png"
+        },
+        {
+            nombre: "ensaladas",
+            descripcion: "Una cena ligera para terminar el día con sabor.",
+            pagina: "recetas/ensaladas.html",
+            imagen: "imagenes/ensaladas.png"
+        }
+    ];
 
+    // Número que cambia una vez al día (según la fecha local del visitante)
+    const hoy = new Date();
+    const semilla = hoy.getFullYear() * 10000 + (hoy.getMonth() + 1) * 100 + hoy.getDate();
+    // Genera un índice "aleatorio" basado en la semilla diaria con cada recarga de la página.
+    //const indice = Math.floor(Math.random() * recetas.length);
+
+    // Convierte esa fecha en un número "aleatorio" estable durante todo el día
+    const aleatorio = (Math.sin(semilla) * 10000) % 1;
+    const indice = Math.floor(Math.abs(aleatorio) * recetas.length);
+
+    const receta = recetas[indice];
+
+    document.getElementById("rdd-nombre").textContent = receta.nombre;
+    document.getElementById("rdd-descripcion").textContent = receta.descripcion;
+    document.getElementById("rdd-imagen").src = receta.imagen;
+    document.getElementById("rdd-imagen").alt = receta.nombre;
+    document.getElementById("rdd-enlace").href = receta.pagina;
+</script>
 <!-- Cierre de la etiqueta raiz -->
 </html>

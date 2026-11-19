@@ -124,8 +124,9 @@
     <!-- ========================================================
          SECCION DE BIENVENIDA: dos columnas al 50 % cada una.
          En celular la primera se oculta y quedan apiladas (ver @media del CSS)
-         ======================================================== -->
-    <section class="desayunos" id="desayunos">
+                                                                                -->
+ <main>
+         <section class="desayunos" id="desayunos">
         <!-- Columna izquierda vacia: el CSS le pone una imagen de fondo (f0.png) -->
         <div class="desayunos-1"></div>
         <div class="desayunos-2"> 
@@ -167,35 +168,7 @@
             </table>
         </div>
     </section>
-    <!-- ========================================================
-         CONTENIDO PRINCIPAL: seccion de servicios.
-         Solo debe haber un <main> por pagina.
-         PENDIENTE: agregar id="recetas" (o "servicios") para el enlace del menu
-         ======================================================== -->
-    <main class="recomendaciones container" id="para hoy">
-
-        <!-- Titulo de la seccion, centrado -->
-        <div class="recomendaciones-txt">
-            <h2>Recomendaciones</h2>
-            <hr>
-            <p>¿Qué cocinamos hoy? Recetas del día, hechas con amor</p>
-        </div>
-
-        <!-- Contenedor de las dos tarjetas, una al lado de la otra (flex) -->
-        <div class="recomendaciones-group">
-
-            <!-- TARJETA 1: cortes de cabello -->
-            <div class="desayunos-1">
-                <!-- ERROR de accesibilidad: alt vacio. Un alt vacio hace que los lectores
-                     de pantalla ignoren la imagen. Debe describirla -->
-                <img src="imagenes/desayuno.png" alt="Desayuno saludable">
-                <h2>una nueva forma de iniciar el dia</h2>
-                
-            </div>
-
-            </div>
-        </div>
-    </main>
+</main>    
 <footer class="footer">
     <div class="container" id="contacto">
         <!-- &copy; es el codigo del simbolo de copyright.
