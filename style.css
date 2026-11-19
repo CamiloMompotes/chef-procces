@@ -72,7 +72,7 @@ body {
     opacity: 0.8;
 }
 #menu{
-    display: block;
+    display: none;
 }
 .menu label {
     display: block;

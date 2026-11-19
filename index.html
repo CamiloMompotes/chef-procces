@@ -54,7 +54,7 @@
             <!-- LOGO: enlace con una imagen dentro.
                  href="#inicio" apunta a un elemento con id="inicio" 
                  Las reglas del CSS ".logo img" le dan tamano y efecto hover a la imagen -->
-            <a href="#inicio" class="logo">
+            <a href="../index.html" class="logo">
                 <!-- src = ruta de la imagen, relativa a la carpeta de este archivo.
                      AVISO: el nombre "logo (1).png" tiene espacio y parentesis,
                      conviene renombrarlo a logo.png para evitar fallos al subirlo a internet.
@@ -79,8 +79,7 @@
                 <ul>
                     <!-- ERROR: href="#" no lleva a ninguna parte.
                          Deberian ser href="#inicio" y href="#recetas" (con sus ids en el destino) -->
-                    <li><a href="#inicio">INICIO</a></li>/ arreglar pulsacion de inicio
-                    <li><a href="#recetas">RECETAS</a></li> /  FALTA REFERENCIADO DE RECETAS
+                    <li><a href="recetas/index.html">RECETAS</a></li> /  FALTA REFERENCIADO DE RECETAS
                     <li><a href="#contacto">CONTACTO</a></li>/ FALTA OTRA PESTAÑA DE REFERENCIA
                 </ul>
             </nav>
@@ -105,7 +104,7 @@
             <div class="header-dir">
                 <div class="dir">
                     <ul>
-                        <li><a href="#recetas"><h3>RECETAS</h3></a></li>
+                        <li><a href="recetas/index.html"><h3>RECETAS</h3></a></li>
                     </ul>
                 </div>
                 <div class="dir">
@@ -177,7 +176,7 @@
         </div>
     </main>
 <footer class="footer">
-    <div class="container">
+    <div class="container" id="contacto">
         <!-- &copy; es el codigo del simbolo de copyright.
              El año dice 2025 y el nombre es de barberia, no de recetas -->
         <p>&copy; 2026 innovacion en recetas</p>
