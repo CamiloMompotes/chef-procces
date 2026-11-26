@@ -1,199 +1,144 @@
-<!-- ============================================================
-     DECLARACION DE TIPO DE DOCUMENTO
-     Le dice al navegador que el archivo es HTML5 (modo estandar).
-     Debe ser siempre la primera linea del archivo.
-     ============================================================ -->
 <!DOCTYPE html>
-
-<!-- Etiqueta raiz: contiene todo el documento.
-     lang="es" declara el idioma (ayuda a lectores de pantalla y traductores). -->
 <html lang="es">
-
-<!-- ============================================================
-     HEAD: informacion para el navegador (NO se muestra en pantalla,
-     salvo el titulo que aparece en la pestaña)
-     ============================================================ -->
 <head>
-    <!-- Codificacion de caracteres: permite tildes y la letra n con tilde -->
     <meta charset="UTF-8">
-
-    <!-- Adapta la pagina al ancho real del celular.
-         Sin esta linea los @media del CSS no funcionan bien en moviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Texto de la pestana del navegador y titulo en Google.
-         ERROR: "PROCCES" esta mal escrito, debe ser "PROCESS" -->
-    <title>ARROCES|CHEF PROCESS</title>
-
-    <!-- Conecta la hoja de estilos (colores, tamanos, posiciones).
-         El nombre debe coincidir exactamente con el archivo real (style.css).
-        -->
-    <link rel="stylesheet" href="../style.css">
-
-    <!-- Resumen que Google puede mostrar bajo el titulo.-->
-    <meta name="description" content="Recetas caseras fáciles de preparar, paso a paso.">
+    <title>Huevos pericos | CHEF PROCESS</title>
+    <meta name="description" content="Huevos pericos: Huevos revueltos con tomate y cebolla larga: rápidos, suaves y con mucho sabor.">
+    <meta name="theme-color" content="#1f4e5f">
+    <link rel="stylesheet" href="../../style.css">
 </head>
-
-<!-- ============================================================
-     BODY: todo lo que se ve en pantalla
-     ============================================================ -->
 <body>
-
-    <!-- ========================================================
-         HEADER: encabezado de la pagina (logo, menu, titulo, contacto)
-         class="header" lo usa el CSS para darle altura de pantalla completa
-         y la foto de fondo borrosa.
-         PENDIENTE: agregar id="inicio" aqui para que los enlaces #inicio funcionen
-         ======================================================== -->
-    <header class="header" id="inicio">
-
-        <!-- BARRA DE MENU: logo a la izquierda, boton y enlaces a la derecha.
-             "menu" la posiciona arriba; "container" limita el ancho a 1200px -->
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="header header-corto" id="inicio">
         <div class="menu container">
- 
-            <!-- LOGO: enlace con una imagen dentro.
-                 href="#inicio" apunta a un elemento con id="inicio" 
-                 Las reglas del CSS ".logo img" le dan tamano y efecto hover a la imagen -->
-            <a href="../index.html" class="logo">
-                <!-- src = ruta de la imagen, relativa a la carpeta de este archivo.
-                     AVISO: el nombre "logo (1).png" tiene espacio y parentesis,
-                     conviene renombrarlo a logo.png para evitar fallos al subirlo a internet.
-                     La clase "menu-icono" no tiene efecto real (la anula ".logo img").
-                     alt = descripcion para lectores de pantalla y por si la imagen no carga -->
-                <img src="../imagenes/logo (1).png" alt="logo pagina wed">
+            <a href="../../index.html" class="logo">
+                <img src="../../imagenes/logo%20(1).png" alt="Chef Process: logo con cuchillo, tomates y champiñón" width="64" height="101">
             </a>
-
-            <!-- TRUCO DEL MENU DESPLEGABLE SIN JAVASCRIPT (3 piezas conectadas):
-                 1) La casilla: se marca y desmarca. El CSS la oculta con "#menu {display:none}".
-                    Si ves un cuadrito, esa regla no se esta aplicando. -->
             <input type="checkbox" id="menu">
-
-            <!-- 2) El boton visible (las tres lineas). for="menu" lo conecta con la casilla
-                    por el id; al tocarlo, la casilla se marca o desmarca -->
-            <label for="menu">☰</label>
-
-            <!-- 3) La lista de enlaces. El CSS la muestra solo cuando la casilla esta
-                    marcada: "#menu:checked ~ .navbar". Debe estar DESPUES del input
-                    y en el mismo nivel (hermanos), como esta aqui -->
-            <nav class="navbar">
+            <label for="menu" aria-label="Abrir o cerrar el menú">☰</label>
+            <nav class="navbar" aria-label="Navegación principal">
                 <ul>
-                    <!-- ERROR: href="#" no lleva a ninguna parte.
-                         Deberian ser href="#inicio" y href="#recetas" (con sus ids en el destino) -->
-                    <li><a href="index.html">INICIO</a></li>/ arreglar pulsacion de inicio
-                    <li><a href="recetas.html">RECETAS</a></li> /  FALTA REFERENCIADO DE RECETAS
-                    <li><a href="#contacto">CONTACTO</a></li>/ FALTA OTRA PESTAÑA DE REFERENCIA
+                    <li><a href="../../index.html">INICIO</a></li>
+                    <li><a href="../index.html">RECETAS</a></li>
+                    <li><a href="#contacto">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
-
-        <!-- CONTENIDO DEL HEADER: titulo y datos de contacto, centrado en la pantalla -->
         <div class="header-content container">
-
-            <!-- Bloque de texto principal -->
             <div class="header-txt">
-                <!-- Titulo principal. Solo debe haber UN h1 por pagina
-                     (en este archivo hay mas, ver notas abajo) -->
-                <h1>HUEVOS</h1>
-                <!-- Lema. Ojo: el CSS aplica estilo a TODOS los span de la pagina -->
-                <span>HAZLO CON AMOR O CAMBIA DE PROFESION</span>
-                <p>
-                    Recetas que alegran el alma, un hobby que enamora 
-                </p>
+                <h1>Huevos pericos</h1>
+                <span>HAZLO CON AMOR O CAMBIA DE PROFESIÓN</span>
+                <p>Huevos revueltos con tomate y cebolla larga: rápidos, suaves y con mucho sabor.</p>
             </div>
-
-            <!-- Bloque referencias, en fila (flex) -->
             <div class="header-dir">
                 <div class="dir">
                     <ul>
-                        <li><a href="recetas.html"><h3>RECETAS</h3></a></li>
+                        <li><a href="#ingredientes"><h3>INGREDIENTES</h3></a></li>
                     </ul>
                 </div>
                 <div class="dir">
                     <ul>
-                        <li><a href="#para hoy"><h3>PARA HOY</h3></a></li>
+                        <li><a href="#preparacion"><h3>PREPARACIÓN</h3></a></li>
                     </ul>
                 </div>
                 <div class="dir">
                     <ul>
-                        <li><a href="#descripcion"><h3>DESCRIPCION</h3></a></li>
+                        <li><a href="#consejos"><h3>CONSEJOS</h3></a></li>
                     </ul>
                 </div>
                 <div class="dir">
                     <ul>
-                        <li><a href="#contacto"><h3>CONTACTO</h3></a></li>
+                        <li><a href="index.html"><h3>MÁS DESAYUNOS</h3></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- ========================================================
-         SECCION DE BIENVENIDA: dos columnas al 50 % cada una.
-         En celular la primera se oculta y quedan apiladas (ver @media del CSS)
-         ======================================================== -->
-    <section class="descripcion" id="descripcion">
-        <!-- Columna izquierda vacia: el CSS le pone una imagen de fondo (f0.png) -->
-        <div class="descripcion-1"></div>
-        <!-- Columna derecha: fondo gris oscuro con texto -->
-        <div class="descripcion-2"> / modificar css
-            <h1>UN NUEVO HOBBY</h1>
-            <!-- Clase b1: da color rojo al texto desde el CSS.
-                 Faltan tildes: "atencion", "estetica" -->
-            <p class="b1">
-                Bienvenido a mi pagina de recetas, un espacio donde la creatividad y el sabor se encuentran. 
-                Aqui comparto mis mejores recetas, desde platos tradicionales hasta innovadoras creaciones culinarias. 
-                Cada receta ha sido cuidadosamente seleccionada para ofrecerte una experiencia gastronomica unica.
+    <main class="receta container" id="contenido">
+        <nav class="migas" aria-label="Ruta de navegación">
+            <ol>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../index.html">Recetas</a></li>
+                <li><a href="index.html">Desayunos</a></li>
+                <li aria-current="page">Huevos pericos</li>
+            </ol>
+        </nav>
+
+        <article>
+            <div class="receta-resumen">
+                <figure class="receta-foto">
+                    <img src="../../imagenes/recetas/huevos.png" alt="Ilustración de huevos revueltos con trocitos de tomate y cebolla larga en un plato" width="640" height="640">
+                </figure>
+                <div class="receta-info">
+                    <p class="etiqueta">Desayuno</p>
+                    <h2>Huevos pericos</h2>
+                    <ul class="datos datos-grandes">
+                        <li><span>Tiempo</span>20 min</li>
+                        <li><span>Rinde</span>2 porciones</li>
+                        <li><span>Dificultad</span>Muy fácil</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="receta-cuerpo">
+                <section class="panel" id="ingredientes">
+                    <h2>Ingredientes</h2>
+                    <ul>
+                        <li>2 cucharaditas de aceite de oliva</li>
+                        <li>3 a 4 cebollas largas (cebolla de rama), en rodajas finas</li>
+                        <li>1 tomate maduro, sin semillas y picado</li>
+                        <li>6 huevos batidos</li>
+                        <li>Sal al gusto</li>
+                    </ul>
+                </section>
+                <section class="panel" id="preparacion">
+                    <h2>Preparación</h2>
+                    <ol>
+                        <li>Calienta el aceite en una sartén antiadherente a fuego medio.</li>
+                        <li>Sofríe la cebolla larga de 3 a 4 minutos, hasta que se ablande.</li>
+                        <li>Agrega el tomate, sazona con sal y cocina de 3 a 4 minutos, hasta que se evapore el líquido.</li>
+                        <li>Añade los huevos batidos y cocina a fuego medio, moviendo de vez en cuando, hasta que apenas cuajen.</li>
+                        <li>Sirve de inmediato.</li>
+                    </ol>
+                </section>
+            </div>
+
+            <section class="panel panel-consejos" id="consejos">
+                <h2>Consejos</h2>
+                <ul>
+                        <li>Retíralos del fuego apenas cuajen: si se pasan, quedan secos y gomosos.</li>
+                        <li>Acompáñalos con arepa, tostada, aguacate o arroz.</li>
+                        <li>Guárdalos en la nevera hasta 3 días y recalienta a fuego bajo.</li>
+                </ul>
+            </section>
+
+            <p class="fuente">Receta adaptada de <a href="https://www.skinnytaste.com/huevos-pericos-colombian-scrambled-eggs" target="_blank" rel="noopener">Skinnytaste</a>. Texto reescrito y cantidades tomadas de la fuente.</p>
+        </article>
+
+        <nav class="receta-nav" aria-label="Más recetas">
+            <a class="nav-ant" href="panqueques.html"><span>← Anterior</span>Panqueques esponjosos</a>
+            <a class="nav-todas" href="index.html">Todos los desayunos</a>
+            <a class="nav-sig" href="ensaladas.html"><span>Siguiente →</span>Ensalada fresca con vinagreta de limón</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="container" id="contacto">
+            <p>&copy; 2026 Innovación en recetas</p>
+            <p>Síguenos en:
+                <a href="https://www.instagram.com/poloca71/" target="_blank" rel="noopener">Instagram</a> |
+                <a href="https://www.facebook.com/profile.php?id=100077200314936&amp;locale=es_LA" target="_blank" rel="noopener">Facebook</a>
+            </p>
+            <p>Contáctanos en:
+                <a href="https://wa.me/573144500131?text=Hola%2C%20quiero%20mas%20informacion%20sobre%20las%20recetas" target="_blank" rel="noopener">WhatsApp</a> |
+                <a href="https://mail.google.com/mail/?view=cm&amp;to=camil.mompotes@utp.edu.co&amp;su=Consulta%20desde%20la%20pagina&amp;body=Hola%2C%20quiero%20mas%20informacion." target="_blank" rel="noopener">Correo</a>
+            </p>
+            <p>
+                <a href="https://github.com/CamiloMompotes/CamiloMompotes" target="_blank" rel="noopener">Página creada por Camilo Mompotes</a>
             </p>
         </div>
-    </section>
-
-    <!-- ========================================================
-         CONTENIDO PRINCIPAL: seccion de servicios.
-         Solo debe haber un <main> por pagina.
-         PENDIENTE: agregar id="recetas" (o "servicios") para el enlace del menu
-         ======================================================== -->
-    <main class="recomendaciones container" id="para hoy">
-
-        <!-- Titulo de la seccion, centrado -->
-        <div class="recomendaciones-txt">
-            <h2>Recomendaciones</h2>
-            <hr>
-            <p>¿Qué cocinamos hoy? Recetas del día, hechas con amor</p>
-        </div>
-
-        <!-- Contenedor de las dos tarjetas, una al lado de la otra (flex) -->
-        <div class="recomendaciones-group">
-
-            <!-- TARJETA 1: cortes de cabello -->
-            <div class="desayunos-1">
-                <!-- ERROR de accesibilidad: alt vacio. Un alt vacio hace que los lectores
-                     de pantalla ignoren la imagen. Debe describirla -->
-                <img src="imagenes/desayuno.png" alt="Desayuno saludable">
-                <h2>una nueva forma de iniciar el dia</h2>
-                
-            </div>
-
-            </div>
-        </div>
-    </main>
-<footer class="footer">
-    <div class="container" id="contacto">
-        <!-- &copy; es el codigo del simbolo de copyright.
-             El año dice 2025 y el nombre es de barberia, no de recetas -->
-        <p>&copy; 2026 innovacion en recetas</p>
-        <p>Síguenos en: 
-            <a href="https://www.instagram.com/poloca71/" target="_blank" rel="noopener">Instagram</a> | 
-            <a href="https://www.facebook.com/profile.php?id=100077200314936&locale=es_LA" target="_blank" rel="noopener">Facebook</a> | 
-        </p>
-        <p>contactanos en:
-            <a href="https://wa.me/573144500131?text=Hola%2C%20quiero%20mas%20informacion%20sobre%20las%20recetas" target="_blank" rel="noopener"> WhatsApp</a> |
-           <a href="https://mail.google.com/mail/?view=cm&to=camil.mompotes@utp.edu.co&su=Consulta%20desde%20la%20pagina&body=Hola%2C%20quiero%20mas%20informacion." target="_blank" rel="noopener"> Correo</a> |
-        </p>
-        <p>
-            <a href="https://github.com/CamiloMompotes/CamiloMompotes">pagina creada por camilo mompotes</a>
-        </p>
-    </div>
-</footer>
-
-<!-- Cierre de la etiqueta raiz -->
+    </footer>
+</body>
 </html>
