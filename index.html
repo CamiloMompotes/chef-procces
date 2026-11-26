@@ -216,10 +216,14 @@
         }
 ];
 
-        const hoy = new Date();
-        const semilla = hoy.getFullYear() * 10000 + (hoy.getMonth() + 1) * 100 + hoy.getDate();
-        const aleatorio = (Math.sin(semilla) * 10000) % 1;
-        const indice = Math.floor(Math.abs(aleatorio) * recetas.length);
+        let indice = Math.floor(Math.random() * recetas.length);
+        try {
+            const anterior = Number(sessionStorage.getItem("recetaDelDia"));
+            if (sessionStorage.getItem("recetaDelDia") !== null && indice === anterior) {
+                indice = (indice + 1 + Math.floor(Math.random() * (recetas.length - 1))) % recetas.length;
+            }
+            sessionStorage.setItem("recetaDelDia", indice);
+        } catch (e) {}
 
         const receta = recetas[indice];
 
