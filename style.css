@@ -174,17 +174,17 @@ body {
     color: #080bdb;
     text-transform: uppercase;
 }
-.welcome {
+.descripcion{
     display: flex;
 }
-.welcome-1 {
-    background-image: url(imagenes/logo-principal-pagina-inicial.png);
+.descripcion-1 {
+    background-image: url(imagenes/chefcito1.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 50%;
 }
-.welcome-2 {
+.descripcion-2 {
     width: 50%;
     padding: 150px 250px 150px 100px;
     background-color: #3A3939;
@@ -273,6 +273,54 @@ hr {
 .service-2 a {
     color: #CF2D3A;
     font-size: 16px;
+}
+.receta-dia {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.rdd-titulo {
+    font-size: 50px;
+    line-height: 1.1;
+}
+
+.rdd-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 700px;
+    margin: 30px auto 0;
+    padding: 20px;
+    background-color: #3a3939;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.rdd-tarjeta img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.rdd-texto h4 {
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.rdd-boton {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #CF2D3A;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .rdd-tarjeta {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 @media(max-width:991px){
     .menu{
