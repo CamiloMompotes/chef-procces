@@ -272,3 +272,7 @@ body.interna::before {
 @media (max-width: 760px) {
     body.interna::before { opacity: .16; background-size: auto 70%; }
 }
+
+.tarjeta-img.con-foto { padding: 0; background: var(--aqua); }
+.tarjeta-img.con-foto img { object-fit: cover; }
+.receta-foto.con-foto { padding: 0; overflow: hidden; background: var(--aqua); }
